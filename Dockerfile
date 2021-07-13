@@ -5,7 +5,8 @@ LABEL repository="https://github.com/helaili/jekyll-action"
 LABEL homepage="https://github.com/helaili/jekyll-action"
 LABEL maintainer="Alain Hélaïli <helaili@github.com>"
 
-RUN apk add --no-cache git build-base imagemagick
+RUN apk add --update --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/community --repository http://dl-3.alpinelinux.org/alpine/edge/main vips-dev
+RUN apk add --no-cache git build-base
 # Allow for timezone setting in _config.yml
 RUN apk add --update tzdata
 # Use curl to send API requests
